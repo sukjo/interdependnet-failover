@@ -1,9 +1,44 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-    color: red;
+:root {
+  font-size: 14px;
+  --lightest: #f5f3f1;
+  --light: #dcdad8;
+  --dark: #393736;
+  --primary: #8795f1;
+  --accent: #ff4e00;
+  --green-grey: #a3a497;
+  --bottom-box-size: 14vh;
+  --border-size: 1px;
+  --handle-size: 0.6rem;
+  --verse-fs: 4rem;
+  --verse-lh: calc(var(--verse-fs) + 0.5rem);
+  --ff-cursive: "Ballet", serif;
+  /* --ff-mono: "mononoki-Regular", monospace; */
+  --ff-serif: "Nanum Myeongjo", serif;
+}
+
+/* ---------------------------------- TEXT ---------------------------------- */
+
+h2 {
+  font-family: var(--ff-cursive);
+  font-weight: 400;
+}
+
+p,
+input,
+label {
+  font-size: 1rem;
+  font-family: var(--ff-serif);
+  font-weight: 400;
+}
+
+span {
+  font-family: var(--ff-mono);
+  font-weight: 400;
+  font-style: normal;
 }
