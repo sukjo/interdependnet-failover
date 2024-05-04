@@ -9,8 +9,6 @@
   --lightest: #f5f3f1;
   --light: #dcdad8;
   --dark: #393736;
-  --primary: #8795f1;
-  --accent: #ff4e00;
   --green-grey: #a3a497;
   --bottom-box-size: 14vh;
   --border-size: 1px;
@@ -18,8 +16,15 @@
   --verse-fs: 4rem;
   --verse-lh: calc(var(--verse-fs) + 0.5rem);
   --ff-cursive: "Ballet", serif;
-  /* --ff-mono: "mononoki-Regular", monospace; */
+  --ff-mono: "mononoki-Regular", monospace;
   --ff-serif: "Nanum Myeongjo", serif;
+}
+
+body {
+  width: 40%;
+  margin: 1rem auto;
+  text-align: justify;
+  background-color: var(--dark);
 }
 
 /* ---------------------------------- TEXT ---------------------------------- */
@@ -27,6 +32,14 @@
 h2 {
   font-family: var(--ff-cursive);
   font-weight: 400;
+  color: var(--lightest);
+}
+
+#address {
+  > h2 {
+    display: inline-block;
+    font-size: 5rem;
+  }
 }
 
 p,
@@ -35,10 +48,94 @@ label {
   font-size: 1rem;
   font-family: var(--ff-serif);
   font-weight: 400;
+  color: var(--lightest);
 }
 
 span {
   font-family: var(--ff-mono);
   font-weight: 400;
   font-style: normal;
+  color: var(--lightest);
+}
+
+#memo {
+  margin-top: -2.5rem;
+
+  & > * {
+    padding-bottom: 0.5rem;
+  }
+}
+
+#meter {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+#voltage {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  /* border-radius: 50%; */
+  background-color: var(--dark);
+  filter: blur(1rem);
+  transition: background-color 3s ease-in-out;
+}
+
+#indicator {
+  background-color: var(--light);
+  border-radius: 50%;
+  filter: blur(1rem);
+  /* width: calc(100vh / 2);
+  height: calc(100vh / 2); */
+  opacity: 0.1;
+}
+
+/* ------------------------------- RESPONSIVE ------------------------------- */
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 18px;
+    --bottom-box-size: calc(50vw * 0.7);
+  }
+
+  body {
+    min-width: 90%;
+  }
+
+  #address > h2:last-of-type {
+    margin-top: -6rem;
+  }
+
+  #memo {
+    margin-top: -0.5rem;
+  }
+}
+
+/* ------------------------------- FONT FACES ------------------------------- */
+
+@font-face {
+  font-family: "mononoki-Regular";
+  src: url("/public/assets/mononoki-Regular.otf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "mononoki-Italic";
+  src: url("/public/assets/mononoki-Italic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "mononoki-Bold";
+  src: url("/public/assets/mononoki-Bold.otf");
+  font-weight: bold;
 }
